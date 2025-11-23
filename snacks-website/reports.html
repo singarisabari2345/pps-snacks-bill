@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Reports - Snacks Company</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🍿 Snacks Company</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="manage.html">Manage Menu</a>
+            <a href="reports.html" class="active">Sales Reports</a>
+            <a href="manage-reports.html">Manage Reports</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="reports-container">
+            <h2>Monthly Sales Report</h2>
+            
+            <div class="filter-section">
+                <label for="month-filter">Filter by Month:</label>
+                <select id="month-filter">
+                    <option value="">All Months</option>
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                </select>
+                
+                <label for="year-filter">Filter by Year:</label>
+                <select id="year-filter">
+                    <option value="">All Years</option>
+                </select>
+            </div>
+            
+            <div class="statistics" id="statistics">
+                <!-- Statistics will be loaded here -->
+            </div>
+            
+            <div id="monthly-breakdown">
+                <!-- Monthly breakdown will be loaded here -->
+            </div>
+            
+            <div id="item-wise-sales">
+                <!-- Item-wise sales will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/reports.js"></script>
+</body>
+</html>
+

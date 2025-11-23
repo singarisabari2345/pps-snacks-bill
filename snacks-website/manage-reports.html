@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Reports - Snacks Company</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🍿PPS Snacks Company</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="manage.html">Manage Menu</a>
+            <a href="reports.html">Sales Reports</a>
+            <a href="manage-reports.html" class="active">Manage Reports</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="table-container">
+            <h2>Sales Records</h2>
+            
+            <div class="filter-section">
+                <label for="search-input">Search:</label>
+                <input type="text" id="search-input" placeholder="Search by transaction ID, date, or item name...">
+                <button class="btn" onclick="filterSales()">Search</button>
+                <button class="btn btn-secondary" onclick="clearSearch()">Clear</button>
+            </div>
+            
+            <div id="sales-table-container">
+                <table id="sales-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Date & Time</th>
+                            <th>Items</th>
+                            <th>Total Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sales-table-body">
+                        <!-- Sales records will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Edit Sale Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Sale Record</h2>
+            <form id="edit-sale-form">
+                <input type="hidden" id="edit-sale-id">
+                
+                <div class="form-group">
+                    <label>Transaction ID</label>
+                    <input type="text" id="edit-transaction-id" readonly style="background: #f0f0f0;">
+                </div>
+                
+                <div class="form-group">
+                    <label>Date & Time</label>
+                    <input type="datetime-local" id="edit-sale-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Items</label>
+                    <button type="button" class="btn" onclick="addEditItem()" style="margin-bottom: 0.5rem;">+ Add Item</button>
+                    <div id="edit-items-container">
+                        <!-- Items will be dynamically added here -->
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Total Amount</label>
+                    <input type="number" id="edit-total-amount" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Update Sale</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/manage-reports.js"></script>
+</body>
+</html>
+

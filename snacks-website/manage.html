@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Menu - Snacks Company</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🍿 PPS Snacks Company</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="manage.html" class="active">Manage Menu</a>
+            <a href="reports.html">Sales Reports</a>
+            <a href="manage-reports.html">Manage Reports</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2 id="form-title">Add New Menu Item</h2>
+            <form id="menu-form">
+                <input type="hidden" id="item-id">
+                
+                <div class="form-group">
+                    <label for="item-name">Item Name *</label>
+                    <input type="text" id="item-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-price">Price (₹) *</label>
+                    <input type="number" id="item-price" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="item-image">Item Image *</label>
+                    <input type="file" id="item-image" accept="image/*" required>
+                    <small style="color: #666; display: block; margin-top: 0.5rem;">Image will be stored as base64</small>
+                </div>
+                
+                <div id="image-preview" class="form-group" style="display: none;">
+                    <label>Image Preview</label>
+                    <img id="preview-img" src="" alt="Preview" style="max-width: 200px; border-radius: 5px; margin-top: 0.5rem;">
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success" id="submit-btn">Add Item</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h2>Menu Items</h2>
+            <table id="menu-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="menu-table-body">
+                    <!-- Menu items will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="js/manage.js"></script>
+</body>
+</html>
+

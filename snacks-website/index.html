@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks Company - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🍿PPS Snacks Company</h1>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="manage.html">Manage Menu</a>
+            <a href="reports.html">Sales Reports</a>
+            <a href="manage-reports.html">Manage Reports</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="menu-section">
+            <h2>Our Snacks Menu</h2>
+            <div id="menu-grid" class="menu-grid">
+                <!-- Menu items will be loaded here -->
+            </div>
+        </div>
+
+        <div class="cart-section">
+            <div class="cart-header">
+                <h2>🛒 Shopping Cart</h2>
+                <button id="clear-cart-btn" class="btn-clear">Clear Cart</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: ₹<span id="cart-total">0.00</span></strong>
+                </div>
+                <div class="cart-actions">
+                    <button id="pay-now-btn" class="btn-pay">Pay Now</button>
+                    <button id="print-bill-btn" class="btn-print">Print Bill</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Payment</h2>
+            <div id="qr-code-container"></div>
+            <p>Scan QR code to complete payment</p>
+            <button id="confirm-payment-btn" class="btn-confirm">Confirm Payment</button>
+        </div>
+    </div>
+
+    <!-- Bill Print Area (hidden) -->
+    <div id="bill-print" class="bill-print" style="display: none;">
+        <div class="bill-header">
+            <img src="pps.jpeg" width="100" alt="pps snacks">
+            <h1>PPS Snacks Company</h1>
+        </div>
+        <div class="bill-details">
+            <p>address:pallathur,ranimookanur,dharmapuri</p>
+            <p><strong>Date:</strong> <span id="bill-date"></span></p>
+            <p><strong>Transaction ID:</strong> <span id="bill-transaction-id"></span></p>
+        </div>
+        <table class="bill-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="bill-items">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Grand Total</strong></td>
+                    <td><strong>₹<span id="bill-total"></span></strong></td><br>
+                    </tr>
+                    <tr>
+                        <td colspan="3">enter balance amount</td><td> <input type ="text" id="balancea-mount"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="bill-footer">
+            <p>Thank you for your purchase!</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
